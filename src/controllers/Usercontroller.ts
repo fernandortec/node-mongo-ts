@@ -21,7 +21,7 @@ export default {
     const { name, email, password, products } = request.body;
 
     if (await User.findOne({ email })) {
-      return response.status(400).json({ error: 'User already exists' });
+      return response.status(400).json({ error: 'User already exist' });
     }
 
     const user = await User.create({
