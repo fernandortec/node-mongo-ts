@@ -1,17 +1,17 @@
+require('dotenv').config();
 import express from 'express';
 import routes from './routes';
 import mongoose from 'mongoose';
 
+import { MONGO_URL } from './services/endpoint';
+
 const app = express();
 
-mongoose.connect(
-  'mongodb+srv://Fernando:maxicontrol@cluster0.c1p11.mongodb.net/github-user:user?retryWrites=true&w=majority',
-  {
-    useUnifiedTopology: true,
-    useNewUrlParser: true,
-    useFindAndModify: false,
-  }
-);
+mongoose.connect(MONGO_URL, {
+  useUnifiedTopology: true,
+  useNewUrlParser: true,
+  useFindAndModify: false,
+});
 
 app.use(express.json());
 app.use(routes);

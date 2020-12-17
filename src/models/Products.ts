@@ -6,7 +6,6 @@ export interface ProductSchemaTypes extends Document {
   name: string;
   price: number;
   stock: number;
-  pageNumbers: number;
   createdAt?: Date;
   updatedAt?: Date;
   department: DepartmentsSchemaTypes;
@@ -31,11 +30,6 @@ const ProductSchema = new mongoose.Schema({
   department: {
     type: DeparmentsSchema,
     required:true,
-  },
-
-  pageNumbers: {
-    type: Number,
-    required: true,
   },
 
   createdAt: {

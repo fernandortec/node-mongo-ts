@@ -1,7 +1,7 @@
 import mongoose, { Document } from 'mongoose';
 
 export interface DepartmentsSchemaTypes extends Document {
-  name: "Alimentos" | "Eletrônicos" | "Eletrodomésticos" | "Hardware";
+  name: string;
 }
 
 const DepartmentsSchema = new mongoose.Schema({

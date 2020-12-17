@@ -40,7 +40,9 @@ export default {
     const user = await User.findOne({ email });
 
     if (!user) {
-      return response.status(400).json({ error: 'Could not find a user with the provided email' });
+      return response
+        .status(400)
+        .json({ error: 'Could not find a user with the provided email' });
     }
 
     user.update({
@@ -59,7 +61,9 @@ export default {
     const userEmail = await User.findOne({ email });
 
     if (!userEmail) {
-      return response.status(400).json({ error: 'Could not find a user with the provided email' });
+      return response
+        .status(400)
+        .json({ error: 'Could not find a user with the provided email' });
     }
 
     await User.findOneAndDelete({ email });
